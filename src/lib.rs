@@ -78,6 +78,10 @@ where
         self.entries.len()
     }
 
+    pub fn is_empty(&self) -> bool {
+        self.entries.is_empty()
+    }
+
     pub fn get_cloned(&mut self, key: &NavCacheKey<N, P>) -> Option<PathResult<N>> {
         let value = self.entries.get(key).cloned()?;
         self.touch(key);
